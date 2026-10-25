@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ebtehal · Twenty ✦</title>
+  <meta name="description" content="A curious little universe made for Ebtehal Mansour's 20th birthday — 25 October 2026.">
+  <meta name="theme-color" content="#0b0a1a">
+  <meta property="og:title" content="Happy 20th, Ebtehal ✦">
+  <meta property="og:description" content="Something curious has been waiting twenty years for you.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>.gate{display:none!important}body.locked{overflow:auto;height:auto}main{opacity:1!important}.reveal,.ch,.fade{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
+</head>
+<body class="locked">
+
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- ═════════════ THE GATE ═════════════ -->
+  <section class="gate" id="gate" aria-label="A sealed envelope">
+    <p class="gate-kicker">A curious delivery has arrived</p>
+
+    <div class="envelope">
+      <div class="env-flap"></div>
+      <div class="env-address">
+        <p class="env-to">To: <span>Ebtehal Mansour</span></p>
+        <p>Orbit No. 20, Planet Earth</p>
+        <p class="env-from">From: the Universe (with love)</p>
+      </div>
+      <div class="env-postmark"><span>25 OCT<br>2026</span></div>
+      <div class="env-stamp"><b>20</b><small>Earth Post</small></div>
+
+      <button class="seal" id="seal" aria-label="Press and hold to break the seal">
+        <svg class="seal-ring" viewBox="0 0 120 120" aria-hidden="true"><circle id="sealRing" cx="60" cy="60" r="54"/></svg>
+        <span class="seal-wax" aria-hidden="true">E</span>
+      </button>
+    </div>
+
+    <p class="gate-hint">Something curious has been waiting twenty years for you.<br><strong>Press &amp; hold the seal</strong> to open it.</p>
+  </section>
+
+  <!-- ═════════════ THE SITE ═════════════ -->
+  <main id="site" aria-hidden="true">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <p class="hero-date fade" style="--d:.2s"><span>25.10.2006</span><i></i><span>25.10.2026</span></p>
+      <canvas id="twenty" class="fade" style="--d:0s" aria-label="The number 20, drawn in stars"></canvas>
+      <h1 class="hero-name" id="heroName" aria-label="Ebtehal Mansour">
+        <span class="first split" data-offset="0">Ebtehal</span>
+        <span class="last split" data-offset="8">Mansour</span>
+      </h1>
+      <p class="hero-sub fade" style="--d:1.6s">Twenty laps around the Sun.<br><em>Still the brightest thing in orbit.</em></p>
+      <p class="hero-hint fade" style="--d:2.2s">drag your cursor through the stars · tap the 20 · scroll if you're curious</p>
+      <span class="scroll-cue fade" style="--d:2.6s" aria-hidden="true"></span>
+    </section>
+
+    <!-- I · THE NAME -->
+    <section class="chapter name-sec" id="name">
+      <p class="label reveal">Chapter I — The Name</p>
+      <div class="arabic reveal" lang="ar" dir="rtl">ابتهال</div>
+      <p class="meaning reveal">
+        <span class="pos">ib·ti·hāl · noun</span><br>
+        A heartfelt prayer; an earnest, hopeful plea.<br>
+        Some names are given. <em>Hers sounds like one that was answered.</em>
+      </p>
+      <div class="acrostic reveal" id="acrostic"></div>
+      <p class="tiny reveal">hover or tap each letter</p>
+    </section>
+
+    <!-- II · THE ODOMETER -->
+    <section class="chapter" id="odometer">
+      <p class="label reveal">Chapter II — The Odometer</p>
+      <h2 class="reveal">Since the moment <em>you arrived</em>…</h2>
+      <p class="lap-note reveal" id="lapNote"></p>
+      <div class="stats" id="stats"></div>
+      <p class="tiny reveal">* counted from 00:00 on 25 October 2006. Nobody told us the exact minute, so you get the whole day.</p>
+    </section>
+
+    <!-- III · THE DAY YOU ARRIVED -->
+    <section class="chapter" id="arrival">
+      <p class="label reveal">Chapter III — The Day You Arrived</p>
+      <h2 class="reveal">An official record of <em>a very good day.</em></h2>
+
+      <div class="ticket reveal">
+        <div class="ticket-main">
+          <p class="ticket-kicker">Arrival record · Planet Earth</p>
+          <h3 class="ticket-date"><em>Wednesday,</em><br>25 October 2006</h3>
+          <dl class="facts">
+            <div><dt>Sign</dt><dd>♏ Scorpio</dd></div>
+            <div><dt>Season</dt><dd>Mid-autumn</dd></div>
+            <div><dt>Birthstone</dt><dd>Opal</dd></div>
+            <div><dt>Flower</dt><dd>Marigold</dd></div>
+            <div><dt>Moon</dt><dd id="moonName">—</dd></div>
+            <div><dt>Status</dt><dd>Legendary</dd></div>
+          </dl>
+          <div class="barcode" aria-hidden="true"><i></i><span>No. 20061025 · admit one legend</span></div>
+        </div>
+        <div class="ticket-stub">
+          <button class="moon-btn" id="moonBtn" aria-label="The moon on the night you were born">
+            <canvas id="moon"></canvas>
+          </button>
+          <p class="moon-cap" id="moonCap">the moon that night</p>
+        </div>
+      </div>
+
+      <ol class="timeline reveal">
+        <li><b>Jul 2006</b>Twitter opened its doors to the public.</li>
+        <li><b>Aug 2006</b>Pluto was demoted to a dwarf planet.</li>
+        <li><b>Oct 9, 2006</b>Google bought YouTube.</li>
+        <li class="hl"><b>Oct 25, 2006</b>The universe released its finest edition: <em>Ebtehal.</em></li>
+      </ol>
+    </section>
+
+    <!-- IV · THE CABINET -->
+    <section class="chapter" id="cabinet">
+      <p class="label reveal">Chapter IV — The Cabinet of Curiosities</p>
+      <h2 class="reveal">Twenty drawers. <em>One for every year.</em></h2>
+      <p class="sub reveal">Open them all. Something might happen.</p>
+      <div class="drawers" id="drawers"></div>
+      <div class="cabinet-count reveal">
+        <div class="bar"><i id="openedBar"></i></div>
+        <span><b id="openedCount">0</b>/20 opened</span>
+      </div>
+    </section>
+
+    <!-- V · THE WISH -->
+    <section class="chapter wish-sec" id="wish">
+      <p class="label reveal">Chapter V — The Wish</p>
+      <h2 class="reveal">Close your eyes. <em>Make a wish.</em></h2>
+      <p class="sub reveal">Then blow out all twenty candles.</p>
+
+      <div class="cake-wrap reveal">
+        <div class="cake" id="cake">
+          <div class="cake-glow"></div>
+          <div class="plate"></div>
+          <div class="cake-body"><span class="drips"></span></div>
+          <div class="cake-top" id="cakeTop"></div>
+        </div>
+      </div>
+
+      <div class="wish-actions reveal">
+        <button class="btn" id="micBtn">🎤 Blow into your mic</button>
+        <button class="btn ghost" id="blowBtn">Or tap here to blow</button>
+      </div>
+      <div class="meter" id="meter" hidden><i></i></div>
+      <p class="tiny wish-status" id="wishStatus" aria-live="polite">Tip: you can also tap the candles one by one.</p>
+    </section>
+
+    <!-- VI · THE LETTER -->
+    <section class="chapter" id="letter-sec">
+      <p class="label reveal">Chapter VI — The Letter</p>
+      <div class="letter locked reveal" id="letter">
+        <span class="letter-seal" aria-hidden="true">20</span>
+        <p class="letter-body" id="letterBody"></p>
+        <p class="letter-sign">— with love, always</p>
+        <div class="letter-lock" id="letterLock">
+          <p>🕯️<br>This letter stays sealed<br>until every candle is out.</p>
+          <a href="#wish" class="btn ghost">Back to the cake</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINALE -->
+    <section class="chapter finale" id="finale">
+      <p class="label reveal">Fin — but only of this page</p>
+      <h2 class="reveal">Happy 20th Birthday,<span class="big-name">Ebtehal.</span></h2>
+      <p class="sub reveal">May twenty be the year curiosity takes you somewhere wonderful.</p>
+      <div class="wish-actions reveal">
+        <button class="btn" id="moreFireworks">Launch more fireworks</button>
+        <a class="btn ghost" href="#top">Back to the stars</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with an unreasonable amount of curiosity for <em>Ebtehal Mansour</em> · 25 October 2026</p>
+      <p class="tiny">There are 3 secrets hidden on this page. ✦</p>
+    </footer>
+  </main>
+
+  <!-- HUD -->
+  <button class="hud-btn" id="secretsBtn" title="Click for hints">✦ Secrets <b id="secretCount">0</b>/3</button>
+  <button class="hud-btn" id="musicBtn" aria-pressed="false">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span><span class="txt">Music off</span>
+  </button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
